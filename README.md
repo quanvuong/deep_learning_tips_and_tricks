@@ -4,7 +4,7 @@ The tricks include the easiest way to do something based on my experience, not c
 
 **Speed Profiling**
 
-There are two main profiling tools, cProfiler and line_profiler. The first helps you find time-consuming functions and the second what lines within the functions take the longest.
+There are two main profiling tools, cProfiler and [line_profiler](https://github.com/rkern/line_profiler). The first helps you find time-consuming functions and the second what lines within the functions take the longest.
 
 cProfiler comes with Python. To install line_profiler, do: 
 
@@ -26,4 +26,6 @@ After you have identify a function to optimize, let's use line_profiler to deter
 
 This command runs your script and outputs the profiling result to your terminal. A typical output looks like [this](https://i.imgur.com/bAEfjcU.png). You can how see long each line within your function takes to run, and optimize accordingly.
   
-Memory Profiling
+**Memory Profiling**
+
+If you suspect your script is leaking memory, use [memory_profiler](https://github.com/fabianp/memory_profiler)
