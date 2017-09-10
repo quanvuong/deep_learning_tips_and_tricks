@@ -8,7 +8,7 @@ There are two main profiling tools, cProfiler and line_profiler. The first helps
 
 cProfiler comes with Python. To install line_profiler, do: 
 
-`pip install -U line_profiler`
+`pip install line_profiler`
 
 To use cProfiler, do: 
 
@@ -26,3 +26,4 @@ After you have identify a function to optimize, let's use line_profiler to deter
 
 This command runs your script and outputs the profiling result to your terminal. A typical output looks like [this](https://i.imgur.com/bAEfjcU.png). You can how see long each line within your function takes to run, and optimize accordingly.
   
+Memory Profiling
