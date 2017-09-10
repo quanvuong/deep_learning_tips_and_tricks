@@ -2,6 +2,8 @@ While there are plenty of resources to understand deep learning, there is not on
 
 The tricks include the easiest way to do something based on my experience, not complete explanations of all features available.
 
+I'm currently an AI researcher at NYU Shanghai.
+
 **Profiling Speed**
 
 There are two main profiling tools, cProfiler and [line_profiler](https://github.com/rkern/line_profiler). The first helps you find time-consuming functions and the second what lines within the functions take the longest.
