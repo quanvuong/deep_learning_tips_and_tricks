@@ -50,22 +50,22 @@ This command shows memory usage over time. In this [example](https://i.imgur.com
 
 If you're running your code on High Performance Cluster, you're probably using [SLURM](https://slurm.schedmd.com/). SLURM seems intimidating at first, but it's a real time saver. It allows you to specify the settings with which your job should be run in (how much memory, gpu). It queues your jobs when requested resources are not available and send you email notifications when your jobs finish.
 
-To use SLURM, you write a text file, which includes all the information needed to run your job and submit the script to SLURM.
+To use SLURM, you write a text file, which includes all the information needed to run your job and submit the file to SLURM.
 
-A typical text file looks like:
+A typical SLURM job submission file looks like:
 
 ```#!/bin/sh -l
 #SBATCH --job-name=name_of_job
 #SBATCH --output=output.slurm  # stdout is redirected to this file, i.e. your print statement will output to this file.
 
-#SBATCH --time=24:00:00  # maximum time your script will run for. 
+#SBATCH --time=24:00:00  # maximum time your script will run for. The format is DD-HH:MM:SS.
 #SBATCH --cpus-per-task=1  # How many CPUs ?
 #SBATCH --mem=20000mb  # How much memory ?
-#SBATCH --mail-type=BEGIN,END,FAIL,REQUEUE,STAGE_OUT  # What end to send email notification for 
-#SBATCH --mail-user=email@address.com  # Where to send email notification  
-#SBATCH --gres=gpu:k80:1  # GPUs ? What kind and how many
+#SBATCH --mail-type=BEGIN,END,FAIL,REQUEUE,STAGE_OUT  # What end to send email notification for. 
+#SBATCH --mail-user=email@address.com  # Where to send email notification.
+#SBATCH --gres=gpu:k80:1  # To request GPU, include this lien ? You can specify kind and number of GPU.
 
-Command to your script goes here. 
+Command to run your script goes here. 
 I typically activate my conda environment. cd to the directory containing my Python script and run it.
 ```
 
@@ -75,7 +75,7 @@ To submit the job to SLURM, do:
 
 You'll want to add `output.slurm` to your `.gitignore` file.
 
-A really handy feature of SLURM is [job array](https://slurm.schedmd.com/job_array.html). It allows you to run identical version of your script with different environment variable. Super useful for parameter tuning or average results over seeds.
+A really handy feature of SLURM is [job array](https://slurm.schedmd.com/job_array.html). It allows you to run identical version of your script with different environment variables. This is super useful for parameter tuning or average results over seeds.
 
 To use job array, add this to your slurm text file:
 
@@ -83,4 +83,4 @@ To use job array, add this to your slurm text file:
 
 Adding this will run your script 10 times in parallel. The environment variable `SLURM_ARRAY_TASK_ID` in each script will have different values (from 1 to 10 in this case). You can then set different parameter setting for each parallel run based on this environment variable.
 
-Also remember to change `#SBATCH --output=output.slurm` to `#SBATCH --output=%a_output.slurm`. This redirect the stdout of each parallel run to different files. `%a` will be replaced by the corresponding `SLURM_ARRAY_TASK_ID` for each run.
+Also remember to change `#SBATCH --output=output.slurm` to `#SBATCH --output=%a_output.slurm`. This redirect the stdout of each parallel run to different file. `%a` will be replaced by the corresponding `SLURM_ARRAY_TASK_ID` for each run.
