@@ -4,7 +4,13 @@ The tricks include the easiest way to do something based on my experience, not c
 
 I'm currently an AI researcher at NYU Shanghai.
 
-**Profiling Speed**
+# Table of Contents  
+* [Profile Speed](#profile_speed)
+* [Profile Memory Usage](#profile_mem)
+* [SLURM - job scheduler for HPC](#slurm)
+
+<a name="profile_speed"/>
+#### Profie Speed
 
 There are two main profiling tools, cProfiler and [line_profiler](https://github.com/rkern/line_profiler). The first helps you find time-consuming functions and the second what lines within the functions take the longest.
 
@@ -28,7 +34,8 @@ After you have identify a function to optimize, let's use line_profiler to deter
 
 This command runs your script and outputs the profiling result to your terminal. A typical output looks like [this](https://i.imgur.com/bAEfjcU.png). You can how see long each line within your function takes to run, and optimize accordingly.
   
-**Profiling Memory Usage**
+<a name="profile_mem"/>
+#### Profiling Memory Usage
 
 If you suspect your script is leaking memory, use [memory_profiler](https://github.com/fabianp/memory_profiler).
 
@@ -46,7 +53,8 @@ This command runs your script and records memory usage into a file. To view the 
 
 This command shows memory usage over time. In this [example](https://i.imgur.com/5TuHdct.png), we can see that memory usage increases linearly with time, which indicates memory leak.
 
-**SLURM - Job Scheduler for HPC**
+<a name="slurm"/>
+#### SLURM - Job Scheduler for HPC
 
 If you're running your code on High Performance Cluster, you're probably using [SLURM](https://slurm.schedmd.com/). SLURM seems intimidating at first, but it's a real time saver. It allows you to specify the settings with which your job should be run in (how much memory, gpu). It queues your jobs when requested resources are not available and send you email notifications when your jobs finish.
 
