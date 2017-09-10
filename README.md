@@ -28,4 +28,18 @@ This command runs your script and outputs the profiling result to your terminal.
   
 **Memory Profiling**
 
-If you suspect your script is leaking memory, use [memory_profiler](https://github.com/fabianp/memory_profiler)
+If you suspect your script is leaking memory, use [memory_profiler](https://github.com/fabianp/memory_profiler).
+
+To install memory_profiler, do: 
+
+`pip install line_profiler`
+
+To check if your script is leaking memory, do:
+
+`mprof run script_to_profile.py`
+
+This command runs your script and records memory usage into a file. To view the memory usage, do:
+ 
+`mprof plot`
+
+This command shows memory usage over time. In this [example](https://i.imgur.com/5TuHdct.png), we can see that memory usage increases linearly with time, which indicates memory leak.
