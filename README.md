@@ -1,3 +1,5 @@
+# Deep Learning Tips and Tricks
+
 While there are plenty of resources to understand deep learning, there is not one that explains the tricks to make daily interaction with neural nets easier. This is my collections of tricks. Suggestions and pull requets are very welcome :). The discussion assumes you use Python.
 
 The tricks include the easiest way to do something based on my experience, not complete explanations of all features available.
