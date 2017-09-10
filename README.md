@@ -89,4 +89,4 @@ Another useful trick is to add the following line into your `~/.bashrc`.
 
 `alias q='echo ; squeue --user=qhv200 --format="%.16i %.9P %.110j %.8M %.10T %R"; echo;'`
 
-You can then view your submitted jobs, their status and most relevant info. [Example](https://i.imgur.com/MKgDK0M.png).
+You can then view your submitted jobs, their status and most relevant info by issuing `q` in the terminal. [Example](https://i.imgur.com/MKgDK0M.png).
