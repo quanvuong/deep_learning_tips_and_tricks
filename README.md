@@ -84,3 +84,9 @@ To use job array, add this to your slurm text file:
 Adding this will run your script 10 times in parallel. The environment variable `SLURM_ARRAY_TASK_ID` in each script will have different values (from 1 to 10 in this case). You can then set different parameter setting for each parallel run based on this environment variable.
 
 Also remember to change `#SBATCH --output=output.slurm` to `#SBATCH --output=%a_output.slurm`. This redirect the stdout of each parallel run to different file. `%a` will be replaced by the corresponding `SLURM_ARRAY_TASK_ID` for each run.
+
+Another useful trick is to add the following line into your `~/.bashrc`.
+
+`alias q='echo ; squeue --user=qhv200 --format="%.16i %.9P %.110j %.8M %.10T %R"; echo;'`
+
+You can then view your submitted jobs, their status and most relevant info. [Example](https://i.imgur.com/MKgDK0M.png).
