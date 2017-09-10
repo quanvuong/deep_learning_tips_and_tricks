@@ -10,7 +10,7 @@ I'm currently an AI researcher at NYU Shanghai.
 * [SLURM - job scheduler for HPC](#slurm)
 
 <a name="profile_speed"/>
-#### Profie Speed
+#### Profile Speed
 
 There are two main profiling tools, cProfiler and [line_profiler](https://github.com/rkern/line_profiler). The first helps you find time-consuming functions and the second what lines within the functions take the longest.
 
