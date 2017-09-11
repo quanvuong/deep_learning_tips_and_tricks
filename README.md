@@ -8,7 +8,7 @@ I'm currently an AI researcher at NYU Shanghai.
 
 # Table of Contents  
 * [Profile Speed](#profile_speed)
-* [Profile Memory Usage](#profile_mem)
+* [Detect Memory Leak](#profile_mem)
 * [SLURM - job scheduler for HPC](#slurm)
 
 <a name="profile_speed"/>
@@ -39,9 +39,9 @@ This command runs your script and outputs the profiling result to your terminal.
   
 <a name="profile_mem"/>
 
-#### Profiling Memory Usage
+#### Detect Memory Leak
 
-If you suspect your script is leaking memory, use [memory_profiler](https://github.com/fabianp/memory_profiler).
+If you suspect your script is leaking memory, use [memory_profiler](https://github.com/fabianp/memory_profiler). When memory leak happens, your program's memory usage does not stop increasing, eventually consuming all memory available on your computer.
 
 To install memory_profiler, do: 
 
