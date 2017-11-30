@@ -76,7 +76,7 @@ A typical SLURM job submission file looks like:
 #SBATCH --mem=20000mb  # How much memory ?
 #SBATCH --mail-type=BEGIN,END,FAIL,REQUEUE,STAGE_OUT  # What event to send email notification for. 
 #SBATCH --mail-user=email@address.com  # Where to send email notification.
-#SBATCH --gres=gpu:k80:1  # To request GPU, include this lien ? You can specify kind and number of GPU.
+#SBATCH --gres=gpu:k80:1  # To request GPU, include this line. You can specify kind and number of GPU.
 
 Command to run your script goes here. 
 I typically activate my conda environment. cd to the directory containing my Python script and run it.
