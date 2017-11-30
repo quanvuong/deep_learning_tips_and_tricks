@@ -74,7 +74,7 @@ A typical SLURM job submission file looks like:
 #SBATCH --time=24:00:00  # maximum time your script will run for. The format is DD-HH:MM:SS.
 #SBATCH --cpus-per-task=1  # How many CPUs ?
 #SBATCH --mem=20000mb  # How much memory ?
-#SBATCH --mail-type=BEGIN,END,FAIL,REQUEUE,STAGE_OUT  # What end to send email notification for. 
+#SBATCH --mail-type=BEGIN,END,FAIL,REQUEUE,STAGE_OUT  # What event to send email notification for. 
 #SBATCH --mail-user=email@address.com  # Where to send email notification.
 #SBATCH --gres=gpu:k80:1  # To request GPU, include this lien ? You can specify kind and number of GPU.
 
