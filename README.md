@@ -88,13 +88,13 @@ To submit the job to SLURM, do:
 
 You'll want to add `output.slurm` to your `.gitignore` file.
 
-A really handy feature of SLURM is [job array](https://slurm.schedmd.com/job_array.html). It allows you to run identical version of your script with different environment variables. This is super useful for parameter tuning or average results over seeds.
+A really handy feature of SLURM is [job array](https://slurm.schedmd.com/job_array.html). It allows you to run identical version of your script with different environment variables. This is super useful for parameter tuning or averaging results over seeds.
 
 To use job array, add this to your slurm text file:
 
 `#SBATCH --array=1-10`
 
-Adding this will run your script 10 times in parallel. The environment variable `SLURM_ARRAY_TASK_ID` in each script will have different values (from 1 to 10 in this case). You can then set different parameter setting for each parallel run based on this environment variable.
+Adding this will run your script 10 times in parallel. The environment variable `SLURM_ARRAY_TASK_ID` for each run will have different values (from 1 to 10 in this case). You can then set different parameter setting for each parallel run based on this environment variable.
 
 Also remember to change `#SBATCH --output=output.slurm` to `#SBATCH --output=%a_output.slurm`. This redirect the stdout of each parallel run to different file. `%a` will be replaced by the corresponding `SLURM_ARRAY_TASK_ID` for each run.
 
