@@ -67,7 +67,8 @@ To use SLURM, you write a text file, which includes all the information needed t
 
 A typical SLURM job submission file looks like:
 
-```#!/bin/sh -l
+```
+#!/bin/sh -l
 #SBATCH --job-name=name_of_job
 #SBATCH --output=output.slurm  # stdout is redirected to this file, i.e. your print statement will output to this file.
 
